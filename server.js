@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(cors());
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 var jwt = require('jsonwebtoken');
 var config = require("dotenv").config();
 // get a list of students from the database
