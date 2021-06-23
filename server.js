@@ -26,14 +26,7 @@ app.use(cors());
 const bcrypt = require("bcryptjs");
 var jwt = require('jsonwebtoken');
 var config = require("dotenv").config();
-
-app.use('/login', (req, res) => {
-  res.send({
-      token: 'test123'
-  }); 
-}); 
 // get a list of students from the database
-/**
 app.use('/login',async (req, res) => {
   console.log("started.xz....");
   console.log(req.body.username);
@@ -85,7 +78,6 @@ app.use('/login',async (req, res) => {
     res.send({ login: false, messege: "cannot login" });
   }
 })
- */
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`\x1b[36m Server running on port ${port}  🔥`);
