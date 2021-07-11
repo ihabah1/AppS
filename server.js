@@ -17,11 +17,18 @@ const Knesetschema = new mongoose.Schema({
 });
 const Users = mongoose.model("UserDB", { name: String, password: String }); //schema
 const app = express();
-app.use(express.static("public"));
+
+//var connect = require("connect");
+
+//var app = connect.createServer().use(connect.static(__dirname + '/public'));
+
+//app.listen(8180);
+
+app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 // MiddleWare
 app.use(cookieParser());
-app.use(express.static("public"));
+//app.use(express.static("public"));
 app.use(cors());
 const bcrypt = require("bcryptjs");
 var jwt = require('jsonwebtoken');
