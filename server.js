@@ -33,7 +33,12 @@ app.use('/login',async (req, res) => {
   console.log(req.body.password);
   //console.log(req.password);
   try {
-    
+    if (process.env.NODE_ENV === "production"{
+      app.use(express.static("build"));
+      app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+      });
+    }
     const email = req.body.username; 
     const password = req.body.password;
     console.log(email, password);
